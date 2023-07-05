@@ -1,5 +1,5 @@
 import React, { Component, useState } from "react";
-import { View, Text, ScrollView, Image, TextInput } from "react-native";
+import { View, Text, ScrollView, Image, TextInput, Button } from "react-native";
 
 const App = () => {
   const [text, setText] = useState('');
@@ -9,7 +9,10 @@ const App = () => {
         padding: 16
       }}>
       <Text>Coba Scroll View</Text>
-      <View>
+      <View
+      style={{
+        alignItems: "center"
+      }}>
         <Text>{text}</Text>
         <Image
           source={{
@@ -24,8 +27,17 @@ const App = () => {
           borderWidth: 1,
           padding: 8
         }}
+
         onChangeText={text => setText(text)}
-        placeholder="Ini adalah hint"/>
+        placeholder="Ini adalah hint" />
+      <View style={{
+        height: 40
+      }} />
+      <Button
+        onPress={() => {
+          console.log('you\'re tapped this');
+        }}
+        title="Press Me!!" />
     </ScrollView>
   );
 };
